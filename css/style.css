@@ -1,12 +1,21 @@
 @tailwind base;
 @tailwind components;
 
-.btn {
-    @apply inline-block focus:outline-none focus:ring focus:ring-offset-2
-    focus:ring-indigo-500 focus:ring-opacity-5 active:bg-indigo-600
-    px-5 py-3 transition duration-1000 rounded-lg shadow-lg bg-indigo-500
-    hover:bg-indigo-400 hover:-translate-y-0.5 transform text-white
-    uppercase font-semibold text-sm sm:text-base;
-}
-
 @tailwind utilities;
+
+@layer components {
+    /* common styles moved here */
+    .btn {
+        @apply inline-block focus:outline-none focus:ring focus:ring-offset-2 focus:ring-opacity-5
+        px-5 py-3 transition duration-100 rounded-lg shadow-lg hover:-translate-y-0.5 transform text-white
+        uppercase font-semibold text-sm sm:text-base;
+    }
+
+    .btn-primary {
+        @apply focus:ring-indigo-500 active:bg-indigo-600 bg-indigo-500 hover:bg-indigo-400
+    }
+
+    .btn-secondary {
+        @apply focus:ring-gray-500 active:bg-gray-600 bg-gray-500 hover:bg-gray-400
+    }
+}
